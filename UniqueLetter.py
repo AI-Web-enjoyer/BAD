@@ -22,7 +22,7 @@ def unique_letter_from_list(letters_list):
             return symbol
 
 def get_unique_letter(text):
-    translating = str.maketrans(".,\n-!?:''", "         ")
+    translating = str.maketrans(".,\n!@#$%^&*()_+-=1234567890", "                           ")
     parsed_text = text.translate(translating)
     words_and_spaces = []
     words_and_spaces.extend(parsed_text.split(" "))

@@ -3,12 +3,9 @@ def main():
     from UniqueLetter import get_unique_letter
     import customtkinter as ctk
 
-
-
     def button_func():
         text = main_textbox.get(1.0, "end-1c")
         var.set(get_unique_letter(text))
-
 
     ctk.set_appearance_mode("dark")
     ctk.set_default_color_theme("blue")
@@ -19,12 +16,6 @@ def main():
     window.title("Uniqueness")
     window.geometry("500x400")
 
-    winWidth = window.winfo_reqwidth()
-    winHeight = window.winfo_reqheight()
-    posRight = int(window.winfo_screenwidth() / 2 - winWidth / 2)
-    posDown = int(window.winfo_screenheight() / 2 - winHeight / 2)
-    # window.geometry("+{}+{}".format(posRight, posDown))
-
     main_label = ctk.CTkLabel(master=window,
                               text="Type any text to get first unique symbol",
                               font=('Arial', 18))
@@ -34,7 +25,6 @@ def main():
 
     main_textbox = tk.Text(window, highlightthickness=0, width=1, height=5, padx=10, pady=10)
     main_textbox.grid(row=1, column=0, sticky="nsew", padx=100)
-
 
     ctk_textbox_scrollbar = ctk.CTkScrollbar(window, command=main_textbox.yview)
     ctk_textbox_scrollbar.grid(row=1, column=1, sticky="ns")
